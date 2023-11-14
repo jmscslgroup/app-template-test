@@ -17,4 +17,4 @@ apps:
         - owner: jmscslgroup
           repo: setpointreader
         - owner: jmscslgroup
-          repo: {REPO_NAME}
+          repo: app-template-test

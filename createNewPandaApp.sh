@@ -9,8 +9,8 @@
 
 # RAW FILES that form the basis for codegen are below
 
-# To read variables into a bash string, the 
-# << reads in from the stdin, which 
+# To read variables into a bash string, the
+# << reads in from the stdin, which
 # - means to skip leading spaces (or maybe tabs?)
 # 'EOF' rather than EOF means to avoid expansions ${INBRACKETS} `or execs`
 
@@ -63,7 +63,7 @@ popd
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 EOF
 
-	
+
 read -r -d '' INSTALLCONTROLLER <<-'EOF'
 #!/bin/bash
 # Author: Matt Nice,Matt Bunting
@@ -214,7 +214,7 @@ apps:
         - owner: jmscslgroup
           repo: setpointreader
         - owner: {GITHUB_OWNER}
-          repo: {REPO_NAME}
+          repo: {REPONAME}
 EOF
 
 
@@ -268,7 +268,7 @@ echo "${DESCRIPTION}" | sed -e 's/{APP_DESCRIPTION}/'"${APP_DESCRIPTION}/" \
 | sed -e 's/{APPNAMECLEAN}/'"${APPNAMECLEAN}/" \
 | sed -e 's/{APPNAMEFOLDER}/'"${APPNAMEFOLDER}/" \
 | sed -e 's/{APPNAMEPRETTY}/'"${APPNAMEPRETTY}/" \
-| sed -e 's/{LAUNCHFILE}/'"${LAUNCHFILE}/" \ 
+| sed -e 's/{LAUNCHFILE}/'"${LAUNCHFILE}/" \
 > ${APPNAMEFOLDER}/${DESCRIPTIONFILE}
 
 # next is install file
@@ -362,7 +362,7 @@ echo "${UNINSTALL}" | sed -e 's/{APP_DESCRIPTION}/'"${APP_DESCRIPTION}/" \
 | sed -e 's/{LAUNCHFILE}/'"${LAUNCHFILE}/" \
 > ${APPNAMEFOLDER}/${UNINSTALLFILE}
 
-# generate the libpanda-apps.yaml file 
+# generate the libpanda-apps.yaml file
 # HACK: (if it already exists, this will go at the bottom)
 # final is YAML file
 echo "Generating ${YAMLFILE}"
